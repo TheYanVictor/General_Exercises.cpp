@@ -1,0 +1,184 @@
+/*Exercicio de funções - Feito por TheYanVictor
+Escreva um programa que, por meio de um menu e o uso de funções, calcule:
+
+a) Área de um retângulo
+b) Área de um triângulo
+c) Área de um círculo
+
+d) Volume de um cubo
+e) Volume de um cilindro
+*/
+
+//Bibliotecas
+#include <iostream>
+#include <math.h>
+
+//Namespace
+using namespace std;
+
+//Cabeçalho das funções
+int menu();
+void area_ret();
+void area_tri();
+void area_circ();
+void vol_cubo();
+void vol_cilin();
+
+//Função principal
+int main()
+{
+	//Variaveis 
+	int op = 1;
+	do
+	{
+		//Chama a função e armazena o return em op
+		op = menu();
+		
+		//Casos selecionamos no menu
+		switch (op)
+		{
+			//Área de um retângulo
+			case 1:
+				area_ret();
+				break;
+				
+			//Área de um triângulo
+			case 2:
+				area_tri();
+				break;
+			
+			//Área de um cículo
+			case 3:
+				area_circ();
+				break;
+				
+			//Volume de um cubo
+			case 4:
+				vol_cubo();
+				break;
+			
+			//Volume de um cilindro
+			case 5:
+				vol_cilin();
+				break;
+		}
+		
+	}while((op >= 1) && (op <= 5));
+	
+	
+	return 0;
+}
+
+//Função do menu
+int menu()
+{
+	//Variáveis
+	int op;
+	
+	//Estrutura a ser impressa
+	system("cls"); //limpa a tela
+	cout << "*-*-*-*-*-*-*-* Menu de funcionalidades *-*-*-*-*-*-*-*\n\n"; //título
+	cout <<"Escreva abaixo o numero da operacao que deseja calcular\n";
+	cout << "1 - Area de um retangulo" << endl;
+	cout << "2 - Area de um triangulo" << endl;
+	cout << "3 - Area de um circulo" << endl;
+	cout << "4 - Volume de um cubo" << endl;
+	cout << "5 - Volume de um cilindro" << endl;
+	cout << "6 - Sair" << endl;
+	cin >> op;
+	
+	return op;
+}
+
+//Função para a área de um retângulo
+void area_ret()
+{
+	//Variáveis
+	int base, altura;
+	
+	//Perguntando as medidas
+	system("cls");
+	cout << "Quais sao as medidas da: \n";
+	cout << "Base: ";
+	cin >> base;
+	cout << "Altura: ";
+	cin >> altura;
+	
+	//Saída + cálculo
+	cout << "\nA area eh: " << altura*base << endl << endl;
+	system("pause");
+}
+
+//Função para a área de um triângulo
+void area_tri()
+{
+	//Variáveis
+	int base, altura;
+	
+	//Perguntando as medidas
+	system("cls");
+	cout << "Quais sao as medidas da: \n";
+	cout << "Base: ";
+	cin >> base;
+	cout << "Altura: ";
+	cin >> altura;
+	
+	//Saída + cálculo
+	cout << "\nA area eh: " << (altura*base)/2 << endl << endl;
+	system("pause");
+}
+
+//Função para a área de um cículo
+void area_circ()
+{
+	//Variáveis
+	int raio;
+	
+	//Perguntando as medidas
+	system("cls");
+	cout << "Qual eh a medida do: \n";
+	cout << "Raio: ";
+	cin >> raio;
+	
+	//Saída + cálculo
+	cout << "\nA area aproximada eh: " << 2 * 3.14 * raio << endl;
+	cout << "Obs.: Nessa conta o valor de Pi foi arredondado para 3,14\n\n";
+	system("pause");
+}
+
+//Função para o volume de um cubo
+void vol_cubo()
+{
+	//Variáveis
+	int base;
+	
+	//Perguntando as medidas
+	system("cls");
+	cout << "Qual eh a medida da: \n";
+	cout << "Base: ";
+	cin >> base;
+	
+	//Saída + cálculo
+	cout << "\nO volume eh: " << pow(base,3)<< endl << endl;
+	system("pause");
+}
+
+//Função para o volume de um cilindro
+void vol_cilin()
+{
+	//Variáveis
+	int raio, altura;
+	
+	//Perguntando as medidas
+	system("cls");
+	cout << "Quais sao as medidas do(a): \n";
+	cout << "Raio: ";
+	cin >> raio;
+	cout << "Altura: ";
+	cin >> altura;
+	
+	//Saída + cálculo
+	cout << "\nO volume aproximado eh: " << (2 * 3.14 * raio) * altura << endl;
+	cout << "Obs.: Nessa conta o valor de Pi foi arredondado para 3,14\n\n";
+	system("pause");
+}
